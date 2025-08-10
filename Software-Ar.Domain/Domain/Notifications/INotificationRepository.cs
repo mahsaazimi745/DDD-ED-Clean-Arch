@@ -9,7 +9,7 @@ namespace Software_Ar.Core.Domain.Notifications
 {
     public interface INotificationRepository:IRepository<Notification>
     {
-      Task<IEnumerable<Notification>> GetAllAsync(); 
+    
 
         Task<Notification> GetByTitleAsync(string title);
  

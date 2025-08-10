@@ -1,4 +1,5 @@
-﻿using Software_Ar.Core.Domain.Notifications;
+﻿using Microsoft.EntityFrameworkCore;
+using Software_Ar.Core.Domain.Notifications;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -9,14 +10,19 @@ namespace Software_Ar.Infrastructure.Persistence.Repositories
 {
     public class NotificationRepository : Repository<Notification>, INotificationRepository
     {
-      public async Task<IEnumerable<Notification>> GetAllAsync() 
+        private readonly AppDbContext _context;
+        public NotificationRepository(AppDbContext context):base(context)
         {
-            return await Notification;
+            _context = context;
         }
+
     
       public async Task<Notification> GetByTitleAsync(string title)
         {
-            var notification = await GetByTitleAsyncAsync.FirstOrDifUlt(t.t=>title==title);
+            // _context. GetByTitleAsyncAsync.FirstOrDifUlt(t.t=>title==title);
+            //return await Notification;
+            return await _context.Notifications.FirstOrDefaultAsync(t => t.Title == title);
         }
     }
-}
+    }
+

@@ -11,10 +11,10 @@ namespace Software_Ar.Core.Domain.Users
 {
     public interface IUserRepository : IRepository<User>
     {
-        Task<bool> IsExistphoneNumberAsync(string phoneNumber);
-        Task<bool> IsExistemailAsync(string email);
-        Task<User?> GetuserByPhoneNumberAsync(string phoneNumber);
-        Task<User> GetuserByEmail(string email);
+        //Task<bool> IsExistphoneNumberAsync(PhoneNumber phoneNumber);
+        //Task<bool> IsExistemailAsync(Email email);
+        Task<User?> GetuserByPhoneNumberAsync(PhoneNumber phoneNumber);
+        Task<User> GetuserByEmail(Email email);
 
     }
 }

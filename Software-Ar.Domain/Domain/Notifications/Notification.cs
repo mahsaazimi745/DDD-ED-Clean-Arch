@@ -13,7 +13,7 @@ namespace Software_Ar.Core.Domain.Notifications
         public string Id { get;private set; }
         public string Title { get; private set; }
         public string Dicription { get; private set; }
-        public NotificationType notificationType { get; }
+        public NotificationType Type { get; }
         #region navigation
         public Guid UserId {  get; private set; }
         public User Users { get; private set; }
