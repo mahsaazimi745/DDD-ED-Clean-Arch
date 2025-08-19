@@ -27,11 +27,11 @@ namespace Software_Ar.Core.Domain.Users.Factories
                   throw new ArgumentNullException("ایمیل الزامی است ",nameof(email));*/
             /* if (string.IsNullOrWhiteSpace(phoneNumber) )
                  throw new ArgumentNullException("شماره تلفن الزامی است ",nameof(phoneNumber));*/
-            /*  var emailResult = Email.Create(email);
+            /*  var emailResult = Email.CreateNotification(email);
               if (emailResult.IsFail)
                   return Result.Failure<User>(emailResult.Error);
 
-              var phoneResult = PhoneNumber.Create(phoneNumber);
+              var phoneResult = PhoneNumber.CreateNotification(phoneNumber);
               if (phoneResult.IsFailure)
                   return Result.Failure<User>(phoneResult.Error);*/
             var emailResult = Email.Create(email);

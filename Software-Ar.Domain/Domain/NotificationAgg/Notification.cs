@@ -1,4 +1,5 @@
-﻿using Software_Ar.Core.Domain.Shared.ValueObjects;
+﻿using Software_Ar.Core.Domain.Shared;
+using Software_Ar.Core.Domain.Shared.ValueObjects;
 using Software_Ar.Core.Domain.Users;
 using System;
 using System.Collections.Generic;
@@ -8,33 +9,31 @@ using System.Threading.Tasks;
 
 namespace Software_Ar.Core.Domain.Notifications
 {
-    public class Notification
+    public class Notification:BaseAggregateRoot
     {
-        public string Id { get;private set; }
+        public Guid Id { get;private set; }
         public string Title { get; private set; }
         public string Dicription { get; private set; }
         public NotificationType Type { get; }
         #region navigation
         public Guid UserId {  get; private set; }
-        public User Users { get; private set; }
+
         #endregion
+        public EmailNotification EmailDetail { get; private set; }
+        public SmsNotification SmsDetail { get; private set; }
         public Notification() { }
-        public Notification(
+
+        internal Notification(
           string title,
           string discription
             ) 
         {
-            Id = Id;
+            Id = Guid.NewGuid();
             Title = title;
             Dicription = discription;
         }
-        public virtual void CreatNotificattion(Guid AdminId, string title ,string discription)
-        {    
-            Guid = AdminId;
-            Title = title;
-            Dicription=discription;
-            return;
-        }
+   
+
        
 
     }

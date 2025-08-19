@@ -10,7 +10,8 @@ namespace Software_Ar.Core.Domain.Notifications.Factories
 {
    public static class NotificationFactory
     {
-        public static Result<Notification> Create( string title ,
+        public static Result<Notification> CreateNotification( 
+            string title ,
             string discription ) 
         { 
             if(string.IsNullOrEmpty(title))
